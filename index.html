@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Objek javascript</title>
+  
+</head>
+
+<body>
+  <h1>Objek dalam javascript</h1>
+  
+  <script>
+    // let orang = {
+    //   nama: 'Agus',
+    //   alamat: 'Meditrania',
+    //  usia: 16
+    
+    //  }
+    // mengakses properti objek menggunakan titik
+    // alert(orang.nama +','+ orang.alamat + ','+orang.usia)
+    // menggunakan square bracket 
+    //  alert(orang['nama']+','+orang ['alamat']  +','+orang['usia'])
+    
+    // menguji key property 
+    // alert('nama' in orang)
+    //alert('alamat' in orang)
+    // alert('usia' in orang)
+    //   alert ('tida ada' in orang) // false
+    
+    // menggunakan perulangan untuk objek
+    
+    // for(let kunci in orang){
+    //   alert(kunci)
+    //  alert(orang[kunci])
+    // }
+    // buat objek 
+    
+    // let siswa = {
+    //   nama: 'angelo',
+    // nilaimtk: 80,
+    // nilaikomputer: 85,
+    // nilaibindo: 83,
+    // }
+    // for (let kunci in siswa){
+    // alert(kunci)
+    // alert(siswa[kunci])
+    // }
+    
+    // membuat objek kosong
+    /* const user = {}
+     
+     // menambah property nama user
+     user.name = 'Michael'
+     user.username = 'Az'
+     user.pasword = 'nothing'
+     
+     // menghapus properti dari objek user
+     delete user.name
+     
+     // memgubah isi value properti objek user
+     user.pasword = 'imking'
+     
+     // ? apa yang terjadi 
+     user.paswordd = 'look' // menambah properti baru
+     
+     for (const kunci in user)
+      // alert(kunci)
+    //   alert(user[kunci])
+     } */
+    
+    const nilai = {
+      matematika: 50,
+      komputer: 50,
+      agama: 50,
+      ppkn: 50,
+      
+    }
+    let jumlah = 0
+    for (let kunci in nilai) {
+      jumlah += nilai[kunci]
+    }
+    //  alert(jumlah)
+    
+    //menerima input dari user
+    //kemudian m masukannya ke dalan objek
+    const dataAngka = {}
+    let penghitung = 0
+    
+    
+    
+    
+    while (true) {
+      const value = prompt('Masukkan angka')
+      
+      if (value === null || value.toLocaleLowerCase() == 'stop') {
+        break
+      }
+      penghitung++
+      dataAngka[penghitung] = value
+    }
+    
+    // tampilan jumlah angka yang di masukan user
+    // tampilkan rata rata angka nya
+    // tampilkan nilai angka terkecil dan terbesar
+    
+    
+    console.log(dataAngka)
+    
+   /* let total = 0
+    for (let x in dataAngka) {
+      total = total + parseInt(dataAngka[x])
+    }
+    console.log('Total angka adalah' + total)
+    
+    let rataRata = total / penghitung
+    console.log('Rata-ratanya adalah' + rataRata)
+    */
+    
+
+let total = 0
+let terbesar = Number.NEGATIVE_INFINITY
+let terkecil = Number.POSITIVE_INFINITY
+
+for (let x in dataAngka) {
+  let nilai = parseInt(dataAngka[x])
+
+  total = total + nilai
+
+  if (nilai > terbesar) {
+    terbesar = nilai
+  }
+  if (nilai < terkecil) {
+    terkecil = nilai
+  }
+}
+
+console.log('Total angka adalah ' + total)
+
+let rataRata = total / penghitung
+console.log('Rata-ratanya adalah ' + rataRata)
+
+console.log('Angka terbesar adalah ' + terbesar)
+console.log('Angka terkecil adalah ' + terkecil)
+  
+  </script>
+</body>
+
+</html>
