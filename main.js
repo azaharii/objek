@@ -66,10 +66,27 @@ let hasilKueri = []
 // loop culplikan kueri, simpan ke variabel hasil kueri
 cuplikanKueri.forEach((dokumen) => {
   hasilKueri.push({
+    id: dokumen.id,
     nama: dokumen.data().nama,
     kelas: dokumen.data().kelas 
   })
 })
 // kembalikan nilai daftar sisqa ke pemanggil fungsi 
 return hasilKueri
+}
+// fungsi untuk menghapus data siswa berdasarkan id data nya
+export async function hapusSiswa(id) {
+  // hapus data siswa
+  await deleteDoc(doc(db, 'siswa', id))
+}
+
+// fungsi untuk mengubah data siswa berdasarkan id data nya 
+export async function ubahSiswa(id, namaPengganti, kelasPengganti) {
+  // ubah data siswa 
+  await updateDoc(
+    doc(db, 'siswa',id),
+    { nama: namaPengganti,
+    kelas: kelasPengganti
+    }
+  )
 }
